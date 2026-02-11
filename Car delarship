@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .car-info {
+            text-align: left;
+        }
+
+        .car-info p {
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #selectedCar {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our Car Dealership</h1>
+</header>
+
+<div class="container">
+
+    <div class="car-card">
+        <div class="car-info">
+            <h2>Toyota Corolla</h2>
+            <p>Price: $20,000</p>
+            <p>Year: 2023</p>
+        </div>
+        <button onclick="selectCar('Toyota Corolla', 20000)">Select</button>
+    </div>
+
+    <div class="car-card">
+        <div class="car-info">
+            <h2>Honda Civic</h2>
+            <p>Price: $22,000</p>
+            <p>Year: 2023</p>
+        </div>
+        <button onclick="selectCar('Honda Civic', 22000)">Select</button>
+    </div>
+
+    <div class="car-card">
+        <div class="car-info">
+            <h2>Ford Mustang</h2>
+            <p>Price: $30,000</p>
+            <p>Year: 2023</p>
+        </div>
+        <button onclick="selectCar('Ford Mustang', 30000)">Select</button>
+    </div>
+
+    <div id="selectedCar">
+        <h2>No car selected</h2>
+    </div>
+
+</div>
+
+<script>
+function selectCar(name, price) {
+    document.getElementById("selectedCar").innerHTML = `
+        <h2>Selected Car: ${name}</h2>
+        <p>Price: $${price}</p>
+    `;
+}
+</script>
+
+</body>
+</html>
